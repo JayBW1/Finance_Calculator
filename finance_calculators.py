@@ -1,24 +1,25 @@
 import math
 # Start
-print("investment - to calculate the amount of interest you'll earn on your investment")
-print("bond - to calculate the amount you'll have to pay on a home loan")
-decision1 = str(input("Enter either 'investment' or 'bond' from the menu above to proceed: "))
+print("Investment - to calculate the amount of interest you'll earn \
+on your investment")
+print("Bond - to calculate the amount you'll have to pay on a home loan")
+decision1 = input("Enter [I]nvestment or [B]ond from Menu: ")
 # containers
-B = "bond"
-I = "investment"
-SI = "simple"
-CI = "compound"
+B = "b"
+I = "i"
+SI = "s"
+CI = "c"
 # investment route
 if decision1 == I:
     print("investment selected")
-    decision_investment1 = input("Please tell us how much money will you be depositing: ")
-    float(decision_investment1)
-    decision_investment2 = input("Enter the applicable interest rate: ")
-    float(decision_investment2)
-    decision_investment3 = input("Enter how many years will you be investing for: ")
-    int(decision_investment3)
-    decision_investment4 = input("Enter either 'simple' for simple interest or 'compound' for compound interest:")
-    str(decision_investment4)
+    decision_investment1 = float(input("Enter how much money will you be \
+depositing: "))
+    decision_investment2 = float(input("Enter the applicable interest \
+rate: "))
+    decision_investment3 = int(input("Enter how many years will you be \
+investing for: "))
+    decision_investment4 = input("Enter [S]imple interest or [C]ompound \
+interest:")
     deposit = float(decision_investment1)
     rate = int(decision_investment2)
     time = int(decision_investment3)
@@ -27,9 +28,9 @@ if decision1 == I:
     t = time
     simple_interest = P *(1 + r*t)
     compound_interest = P * math.pow((1 + r),t)
-    if decision_investment4 == SI:
+    if decision_investment4.lower() == SI:
         print(simple_interest)
-    elif decision_investment4 == CI:
+    elif decision_investment4 == CI.lower():
         print(compound_interest)
 # bond route
 if decision1 == B: 
